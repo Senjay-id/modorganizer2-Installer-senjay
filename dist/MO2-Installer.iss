@@ -52,35 +52,39 @@ Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: 
 Filename: "{app}\{#MyAppExeName}"; Flags: nowait postinstall skipifsilent; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"
 
 [Types]
-Name: "Full"; Description: "Recommened Install"
+Name: "Full"; Description: "Recommended Install"
 Name: "Custom"; Description: "Expert Install"; Flags: iscustom
 
+; NOTE:  Order of the components matters!  See proc UpdateComponents below.
 [Components]
 Name: "core"; Description: "Core Application"; Types: Custom Full; Flags: fixed
 Name: "QTDLL"; Description: "Qt DLL's"; Types: Full Custom; Flags: fixed
+Name: "FileExplorer"; Description: "Explorer++"; Types: Full Custom;
 Name: "Plugins"; Description: "MO2 Plugins"; Types: Full Custom
-Name: "Plugins\Python"; Description: "Python Support"; Types: Custom Full
 Name: "Plugins\Manual"; Description: "Manual Installer"; Types: Custom Full
 Name: "Plugins\Quick"; Description: "Quick Installer"; Types: Custom Full
 Name: "Plugins\Bain"; Description: "BAIN Installer"; Types: Custom Full
 Name: "Plugins\FOMOD"; Description: "FOMOD Installer"; Types: Custom Full
 Name: "Plugins\NCC"; Description: "NCC Installer"; Types: Custom Full
-Name: "Plugins\LegacyINI"; Description: "Legacy ini editor"; Types: Custom Full
+Name: "Plugins\LegacyINI"; Description: "Legacy INI editor"; Types: Custom Full
 Name: "Plugins\FNISCheck"; Description: "FNIS Checker"; Types: Custom Full
-Name: "Plugins\FNISPatches"; Description: "FNIS Patches"; Types: Custom Full
-Name: "Plugins\FNISTool"; Description: "FNIS Tool"; Types: Custom Full
-Name: "Plugins\Configurator"; Description: "Configurator"; Types: Custom Full
+Name: "Plugins\Python"; Description: "Python Support"; Types: Custom Full
+Name: "Plugins\FNISPatches"; Description: "FNIS Patches (requires Python)"; Types: Custom Full
+Name: "Plugins\FNISTool"; Description: "FNIS Tool (requires Python)"; Types: Custom Full
+Name: "Plugins\Configurator"; Description: "Configurator (requires Python)"; Types: Custom Full
+Name: "Plugins\SEPluginChecker"; Description: "Script Extender Plugin Checker (requires Python)"; Types: Custom Full
 Name: "Plugins\File"; Description: "File Preview"; Types: Custom Full
 Name: "Plugins\Oblivion"; Description: "Oblivion Support"; Types: Custom Full
 Name: "Plugins\Morrowind"; Description: "Morrowind Support"; Types: Custom Full
 Name: "Plugins\Fallout3"; Description: "Fallout 3 Support"; Types: Custom Full
-Name: "Plugins\TTW"; Description: "TTW Support"; Types: Custom Full
-Name: "Plugins\Fallout4"; Description: "Fallout 4 Support"; Types: Custom Full
-Name: "Plugins\Fallout4VR"; Description: "Fallout 4 VR Support"; Types: Custom Full
 Name: "Plugins\NV"; Description: "New Vegas Support"; Types: Custom Full
+Name: "Plugins\TTW"; Description: "TTW Support (requires Fallout 3 and New Vegas)"; Types: Custom Full
+Name: "Plugins\Fallout4"; Description: "Fallout 4 Support"; Types: Custom Full
+Name: "Plugins\Fallout4VR"; Description: "Fallout 4 VR Support (requires Fallout 4)"; Types: Custom Full
 Name: "Plugins\Skyrim"; Description: "Skyrim Support"; Types: Custom Full
-Name: "Plugins\SkyrimVR"; Description: "SkyrimVR Support"; Types: Custom Full
-Name: "Plugins\SkyrimSE"; Description: "Skyrimse Support"; Types: Custom Full
+Name: "Plugins\Enderal"; Description: "Enderal Support (requires Skyrim)"; Types: Custom Full
+Name: "Plugins\SkyrimSE"; Description: "SkyrimSE Support (requires Skyrim)"; Types: Custom Full
+Name: "Plugins\SkyrimVR"; Description: "SkyrimVR Support (requires Skyrim and SkyrimSE)"; Types: Custom Full
 Name: "Translations"; Description: "Translations"; Types: Custom Full
 Name: "Tutorials"; Description: "Tutorials"; Types: Custom Full
 Name: "Stylesheets"; Description: "Stylesheets"; Types: Custom Full
@@ -88,7 +92,7 @@ Name: "Nexus"; Description: "Handle Nexus Links"
 
 [Files]
 ;Core Files
-Source: "..\..\..\..\install\bin\boost_python37-vc141-mt-x64-1_68.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\boost_python37-vc141-mt-x64-1_69.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\helper.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\libeay32.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\ModOrganizer.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
@@ -100,8 +104,8 @@ Source: "..\..\..\..\install\bin\usvfs_proxy_x64.exe"; DestDir: "{app}"; Flags: 
 Source: "..\..\..\..\install\bin\usvfs_proxy_x86.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\usvfs_x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\usvfs_x86.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\loot\loot.dll"; DestDir: "{app}\loot"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\loot\lootcli.exe"; DestDir: "{app}\loot"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\loot\loot_api.dll"; DestDir: "{app}\loot"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\plugins\bsa_extractor.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\plugins\diagnose_basic.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\plugins\inibakery.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
@@ -131,6 +135,7 @@ Source: "..\..\..\..\install\bin\dlls\Qt5Svg.dll"; DestDir: "{app}\dlls"; Flags:
 Source: "..\..\..\..\install\bin\dlls\Qt5WebChannel.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\Qt5WebEngineCore.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\Qt5WebEngineWidgets.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
+Source: "..\..\..\..\install\bin\dlls\Qt5WebSockets.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\Qt5Widgets.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\Qt5WinExtras.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\d3dcompiler_47.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
@@ -138,6 +143,8 @@ Source: "..\..\..\..\install\bin\dlls\dlls.manifest"; DestDir: "{app}\dlls"; Fla
 Source: "..\..\..\..\install\bin\dlls\libEGL.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\libGLESV2.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\opengl32sw.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
+;Explorer++
+Source: "..\..\..\..\install\bin\explorer++\*"; DestDir: "{app}\explorer++"; Flags: ignoreversion; Components: FileExplorer
 ;Start Plugin Groups
 ;Manual Installer
 Source: "..\..\..\..\install\bin\plugins\installer_manual.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\Manual
@@ -181,12 +188,16 @@ Source: "..\..\..\..\install\bin\plugins\game_falloutNV.dll"; DestDir: "{app}\pl
 Source: "..\..\..\..\install\bin\plugins\game_skyrim.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\Skyrim
 ;SkyrimVR Support
 Source: "..\..\..\..\install\bin\plugins\game_skyrimvr.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\SkyrimVR
-;Skyrimse Support
+;SkyrimSE Support
 Source: "..\..\..\..\install\bin\plugins\game_skyrimse.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\SkyrimSE
+;Enderal Support
+Source: "..\..\..\..\install\bin\plugins\game_enderal.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\Enderal
 ;FNIS Patches
 Source: "..\..\..\..\install\bin\plugins\FNISPatches.py"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\FNISPatches
 ;FNIS Tool
 Source: "..\..\..\..\install\bin\plugins\FNISTool.py"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\FNISTool
+;Script Extender Plugin Checker
+Source: "..\..\..\..\install\bin\plugins\ScriptExtenderPluginChecker.py"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\SEPluginChecker
 ;End Plugin Groups
 ;Translations
 Source: "..\..\..\..\install\bin\translations\*"; DestDir: "{app}\translations"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Translations
@@ -196,12 +207,13 @@ Source: "..\..\..\..\install\bin\tutorials\*"; DestDir: "{app}\tutorials"; Flags
 Source: "..\..\..\..\install\bin\stylesheets\*"; DestDir: "{app}\stylesheets"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Stylesheets
 
 [Registry]
-Root: "HKCU"; Subkey: "Software\Classes\nxm"; ValueType: string; ValueData: "URL:NXM Protocol"; Flags: createvalueifdoesntexist; Components: Nexus; 
-Root: "HKCU"; Subkey: "Software\Classes\nxm"; ValueType: string; ValueName: "URL Protocol"; Flags: createvalueifdoesntexist; Components: Nexus; 
-Root: "HKCU"; Subkey: "Software\Classes\nxm\shell\open\command"; ValueType: string; ValueData: """{app}\nxmhandler.exe"" ""%1"""; Flags: createvalueifdoesntexist deletevalue uninsclearvalue; Components: Nexus; AfterInstall: WriteNexusHandlerINI('{localappdata}\ModOrganizer\nxmhandler.ini', '{app}\{#MyAppExeName}')
+Root: "HKCU"; Subkey: "Software\Classes\nxm"; ValueType: string; ValueData: "URL:NXM Protocol"; Flags: createvalueifdoesntexist; Components: Nexus;
+Root: "HKCU"; Subkey: "Software\Classes\nxm"; ValueType: string; ValueName: "URL Protocol"; Flags: createvalueifdoesntexist; Components: Nexus;
+Root: "HKCU"; Subkey: "Software\Classes\nxm\shell\open\command"; ValueType: string; ValueData: """{app}\nxmhandler.exe"" ""%1"""; Flags: createvalueifdoesntexist deletevalue uninsclearvalue; Components: Nexus; AfterInstall: WriteNexusHandlerINI('{localappdata}\ModOrganizer\', 'nxmhandler.ini', '{app}\{#MyAppExeName}')
 
 [InstallDelete]
 Type: filesandordirs; Name: "{app}/DLLS"
+Type: filesandordirs; Name: "{app}/explorer++"
 Type: filesandordirs; Name: "{app}/licenses"
 Type: filesandordirs; Name: "{app}/loot"
 Type: filesandordirs; Name: "{app}/NCC"
@@ -236,9 +248,18 @@ Type: filesandordirs; Name: "{app}/webcache"
 [Code]
 const
 //Define global constants
-  CompIndexFNISPatches = 11;
-  CompIndexFNISTool = 12; 
-  CompIndexConfigurator = 13;
+  CompIndexFNISPatches = 12;
+  CompIndexFNISTool = 13;
+  CompIndexConfigurator = 14;
+  CompIndexSEPluginChecker = 15;
+  CompIndexGameFallout3 = 19;
+  CompIndexGameTTW = 21;
+  CompIndexGameFallout4 = 22;
+  CompIndexGameFallout4VR = 23;
+  CompIndexGameSkyrim = 24;
+  CompIndexGameEnderal = 25;
+  CompIndexGameSkyrimSE = 26;
+  CompIndexGameSkyrimVR = 27;
 
 var
 //Define global variables
@@ -251,15 +272,59 @@ procedure UpdateComponents;
 begin
   with WizardForm.ComponentsList do
     begin
+      //Python plugins require Python
       if not IsComponentSelected('Plugins\Python') then
         begin
           CheckItem(CompIndexFNISPatches, coUncheck);
           CheckItem(CompIndexFNISTool, coUncheck);
           CheckItem(CompIndexConfigurator, coUncheck);
-        end; 
+          CheckItem(CompIndexSEPluginChecker, coUncheck);
+        end;
       ItemEnabled[CompIndexConfigurator] := IsComponentSelected('Plugins\Python');
       ItemEnabled[CompIndexFNISPatches] := IsComponentSelected('Plugins\Python');
       ItemEnabled[CompIndexFNISTool] := IsComponentSelected('Plugins\Python');
+      ItemEnabled[CompIndexSEPluginChecker] := IsComponentSelected('Plugins\Python');
+
+      //Skyrim VR, Skyrim SE, and Enderal require Skyrim for full functionality
+      if not IsComponentSelected('Plugins\Skyrim') then
+        begin
+          CheckItem(CompIndexGameSkyrimVR, coUncheck);
+          CheckItem(CompIndexGameSkyrimSE, coUncheck);
+          CheckItem(CompIndexGameEnderal, coUncheck);
+        end;
+      ItemEnabled[CompIndexGameSkyrimVR] := IsComponentSelected('Plugins\Skyrim');
+      ItemEnabled[CompIndexGameSkyrimSE] := IsComponentSelected('Plugins\Skyrim');
+      ItemEnabled[CompIndexGameEnderal] := IsComponentSelected('Plugins\Skyrim');
+
+      //Skyrim VR requires Skyrim SE for full functionality
+      if not IsComponentSelected('Plugins\SkyrimSE') then
+        begin
+          CheckItem(CompIndexGameSkyrimVR, coUncheck);
+        end;
+      ItemEnabled[CompIndexGameSkyrimVR] := IsComponentSelected('Plugins\SkyrimSE');
+
+      //TTW requires Fallout 3 for full functionality
+      if not IsComponentSelected('Plugins\Fallout3') then
+        begin
+          CheckItem(CompIndexGameTTW, coUncheck);
+        end;
+      ItemEnabled[CompIndexGameTTW] := IsComponentSelected('Plugins\Fallout3');
+
+
+      //TTW requires New Vegas for full functionality
+      if not IsComponentSelected('Plugins\NV') then
+        begin
+          CheckItem(CompIndexGameTTW, coUncheck);
+        end;
+      ItemEnabled[CompIndexGameTTW] := IsComponentSelected('Plugins\NV');
+
+      //Fallout 4 VR requires Fallout 4 for full functionality
+      if not IsComponentSelected('Plugins\Fallout4') then
+        begin
+          CheckItem(CompIndexGameFallout4VR, coUncheck);
+        end;
+      ItemEnabled[CompIndexGameFallout4VR] := IsComponentSelected('Plugins\Fallout4');
+
       Invalidate; //required for text state to update correctly
     end;
 end;
@@ -313,23 +378,27 @@ begin
   end
 end;
 
-procedure WriteNexusHandlerINI(const Filename: String; const Handler: String);
+procedure WriteNexusHandlerINI(const Filepath: String; const Filename: String; const Handler: String);
 var
-  Written: Boolean;
-  Output, FixedHandler: String;
+  Success: Boolean;
+  ExpandedStr, OutputStr: String;
 begin
-  FixedHandler := ExpandConstant(Handler);
-  StringChangeEx(FixedHandler, '\', '\\', True);
-  Output :=          '[handlers]'                          + #10#13;
-  Output := Output + 'size=1'                              + #10#13;
-  Output := Output + '1\games='                            + #10#13;
-  Output := Output + '1\executable="' + FixedHandler + '"' + #10#13;
+  ExpandedStr := ExpandConstant(Handler);
+  StringChangeEx(ExpandedStr, '\', '\\', True);
+  OutputStr :=             '[handlers]'                         + #10#13;
+  OutputStr := OutputStr + 'size=1'                             + #10#13;
+  OutputStr := OutputStr + '1\games='                           + #10#13;
+  OutputStr := OutputStr + '1\executable="' + ExpandedStr + '"' + #10#13;
   if IsComponentSelected('Nexus') then
   begin
-    Written := SaveStringToFile(ExpandConstant(Filename), Output, False);
-    if not Written then
-    begin
-      MsgBox('Unable to write ' + ExpandConstant(Filename), mbError, MB_OK);
-    end
+    ExpandedStr := ExpandConstant(Filepath)
+    Success := DirExists(ExpandedStr) or CreateDir(ExpandedStr)
+    if not Success then
+      MsgBox('Unable to create directory ' + ExpandedStr, mbError, MB_OK);
+
+    ExpandedStr := ExpandConstant(Filepath) + ExpandConstant(Filename)
+    Success := SaveStringToFile(ExpandedStr, OutputStr, False);
+    if not Success then
+      MsgBox('Unable to write ' + ExpandedStr, mbError, MB_OK);
   end
 end;
