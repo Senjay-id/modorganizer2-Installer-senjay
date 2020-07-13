@@ -133,6 +133,8 @@ Source: "..\..\..\..\install\bin\dlls\Qt5WebEngineWidgets.dll"; DestDir: "{app}\
 Source: "..\..\..\..\install\bin\dlls\Qt5WebSockets.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\Qt5Widgets.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\Qt5WinExtras.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
+Source: "..\..\..\..\install\bin\dlls\Qt5QmlModels.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
+Source: "..\..\..\..\install\bin\dlls\Qt5QmlWorkerScript.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\d3dcompiler_47.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\dlls.manifest"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\libEGL.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
@@ -149,11 +151,14 @@ Source: "..\..\..\..\install\bin\plugins\installer_quick.dll"; DestDir: "{app}\p
 Source: "..\..\..\..\install\bin\plugins\installer_bain.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\Bain
 ;FOMOD Installer
 Source: "..\..\..\..\install\bin\plugins\installer_fomod.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\FOMOD
+;FOMOD C# Installer
+Source: "..\..\..\..\install\bin\plugins\installer_fomod_csharp.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\FOMOD
 ;NCC Installer
 Source: "..\..\..\..\install\bin\NCC\*"; DestDir: "{app}\NCC"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\NCC
 Source: "..\..\..\..\install\bin\plugins\installer_ncc.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\NCC
 ;Python Support
 Source: "..\..\..\..\install\bin\python38.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
+Source: "..\..\..\..\install\bin\libffi-7.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
 Source: "..\..\..\..\install\bin\pythoncore.zip"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
 Source: "..\..\..\..\install\bin\pythoncore\*"; DestDir: "{app}\pythoncore"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\Python
 Source: "..\..\..\..\install\bin\plugins\plugin_python.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\Python
@@ -166,6 +171,8 @@ Source: "..\..\..\..\install\bin\plugins\check_fnis.dll"; DestDir: "{app}\plugin
 Source: "..\..\..\..\install\bin\plugins\pyCfg.py"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\Configurator
 ;File Preview
 Source: "..\..\..\..\install\bin\plugins\preview_base.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\File
+;Preview BSA
+Source: "..\..\..\..\install\bin\plugins\preview_bsa.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\File
 ;Game Support
 Source: "..\..\..\..\install\bin\plugins\game_oblivion.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_morrowind.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
