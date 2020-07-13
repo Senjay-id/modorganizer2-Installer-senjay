@@ -85,7 +85,7 @@ Name: "Nexus"; Description: "Handle Nexus Links"
 
 [Files]
 ;Core Files
-Source: "..\..\..\..\install\bin\boost_python37-vc142-mt-x64-1_71.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\boost_python38-vc142-mt-x64-1_73.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dump_running_process.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\helper.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\libcrypto-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
@@ -110,7 +110,7 @@ Source: "..\..\..\..\install\bin\platforms\*"; DestDir: "{app}\platforms"; Flags
 Source: "..\..\..\..\install\bin\dlls\7z.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\archive.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\libcrypto-1_1-x64.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\dlls\liblz4.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core       
+Source: "..\..\..\..\install\bin\dlls\liblz4.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\libssl-1_1-x64.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\resources\*"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\styles\*"; DestDir: "{app}\styles"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
@@ -153,7 +153,7 @@ Source: "..\..\..\..\install\bin\plugins\installer_fomod.dll"; DestDir: "{app}\p
 Source: "..\..\..\..\install\bin\NCC\*"; DestDir: "{app}\NCC"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\NCC
 Source: "..\..\..\..\install\bin\plugins\installer_ncc.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\NCC
 ;Python Support
-Source: "..\..\..\..\install\bin\python37.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
+Source: "..\..\..\..\install\bin\python38.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
 Source: "..\..\..\..\install\bin\pythoncore.zip"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
 Source: "..\..\..\..\install\bin\pythoncore\*"; DestDir: "{app}\pythoncore"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\Python
 Source: "..\..\..\..\install\bin\plugins\plugin_python.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\Python
