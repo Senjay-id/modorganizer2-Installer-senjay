@@ -81,6 +81,7 @@ Name: "Plugins\BSAPacker"; Description: "BSA/BA2 Packer"; Types: Custom Full
 Name: "Translations"; Description: "Translations"; Types: Custom Full
 Name: "Tutorials"; Description: "Tutorials"; Types: Custom Full
 Name: "Stylesheets"; Description: "Stylesheets"; Types: Custom Full
+Name: "Exclusions"; Description: "Add Windows Defender Exclusions"; Types: Custom Full
 
 [Files]
 ;Core Files
