@@ -176,6 +176,8 @@ function PrepareToInstall(var NeedsRestart: boolean): String;
 var
 	i: Integer;
 	s: string;
+	ResultCode: Integer;
+	DefenderFailure: boolean;
 begin
 	delayedReboot := false;
 
@@ -195,6 +197,40 @@ begin
 
 			// write into the registry that the installer needs to be executed again after restart
 			RegWriteStringValue(HKEY_CURRENT_USER, 'SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce', 'InstallBootstrap', ExpandConstant('{srcexe}'));
+			end;
+	end;
+
+	// Changes for Mod Organizer 2 to add Windows Defender Exclusions
+	// If we were using InnoSetup 6, we could add a function in our main install script
+	// using <event('PrepareToInstall')>.
+	if IsComponentSelected('Exclusions') then begin
+		DefenderFailure := false
+		Exec('powershell.exe', ExpandConstant('Add-MpPreference -ExclusionPath "{app}"'), '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
+		if ResultCode <> 0 then begin
+			DefenderFailure := true;
+			end;
+		Exec('powershell.exe', ExpandConstant('Add-MpPreference -ExclusionPath "{localappdata}\ModOrganizer"'), '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
+		if ResultCode <> 0 then begin
+			DefenderFailure := true;
+			end;
+		Exec('powershell.exe', 'Add-MpPreference -ExclusionProcess "ModOrganizer.exe"', '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
+		if ResultCode <> 0 then begin
+			DefenderFailure := true;
+			end;
+		Exec('powershell.exe', 'Add-MpPreference -ExclusionProcess "usvfs_proxy_x86.exe"', '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
+		if ResultCode <> 0 then begin
+			DefenderFailure := true;
+			end;
+		Exec('powershell.exe', 'Add-MpPreference -ExclusionProcess "usvfs_proxy_x64.exe"', '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
+		if ResultCode <> 0 then begin
+			DefenderFailure := true;
+			end;
+		Exec('powershell.exe', 'Add-MpPreference -ExclusionProcess "nxmhandler.exe"', '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
+		if ResultCode <> 0 then begin
+			DefenderFailure := true;
+			end;
+		if DefenderFailure <> false then begin
+			Result := 'Windows Defender Exclusions';
 			end;
 	end;
 end;
