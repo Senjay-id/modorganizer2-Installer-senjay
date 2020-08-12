@@ -214,11 +214,9 @@ Type: filesandordirs; Name: "{app}/licenses"
 Type: filesandordirs; Name: "{app}/loot"
 Type: filesandordirs; Name: "{app}/NCC"
 Type: filesandordirs; Name: "{app}/platforms"
-Type: filesandordirs; Name: "{app}/plugins"
 Type: filesandordirs; Name: "{app}/QtQuick.2"
 Type: filesandordirs; Name: "{app}/resources"
 Type: filesandordirs; Name: "{app}/styles"
-Type: filesandordirs; Name: "{app}/stylesheets"
 Type: filesandordirs; Name: "{app}/translations"
 Type: filesandordirs; Name: "{app}/tutorials"
 Type: filesandordirs; Name: "{app}/boost_python*.dll"
@@ -232,6 +230,10 @@ Type: filesandordirs; Name: "{app}/ssleay32.dll"
 Type: filesandordirs; Name: "{app}/uibase.dll"
 Type: filesandordirs; Name: "{app}/uninstall.exe"
 Type: filesandordirs; Name: "{app}/usvfs_*"
+;Only use if release breaks plugins:
+;Type: filesandordirs; Name: "{app}/plugins"
+;Only use if release breaks stylesheets:
+;Type: filesandordirs; Name: "{app}/stylesheets"
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}/pythoncore"
