@@ -205,11 +205,11 @@ begin
 	// using <event('PrepareToInstall')>.
 	if IsComponentSelected('Exclusions') then begin
 		DefenderFailure := false
-		Exec('powershell.exe', ExpandConstant('Add-MpPreference -ExclusionPath "{app}"'), '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
+		Exec('powershell.exe', ExpandConstant('Add-MpPreference -ExclusionPath "\"{app}\""'), '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
 		if ResultCode <> 0 then begin
 			DefenderFailure := true;
 			end;
-		Exec('powershell.exe', ExpandConstant('Add-MpPreference -ExclusionPath "{localappdata}\ModOrganizer"'), '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
+		Exec('powershell.exe', ExpandConstant('Add-MpPreference -ExclusionPath "\"{localappdata}\ModOrganizer\""'), '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
 		if ResultCode <> 0 then begin
 			DefenderFailure := true;
 			end;
