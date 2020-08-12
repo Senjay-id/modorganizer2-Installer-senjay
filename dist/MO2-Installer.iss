@@ -81,7 +81,7 @@ Name: "Plugins\BSAPacker"; Description: "BSA/BA2 Packer"; Types: Custom Full
 Name: "Translations"; Description: "Translations"; Types: Custom Full
 Name: "Tutorials"; Description: "Tutorials"; Types: Custom Full
 Name: "Stylesheets"; Description: "Stylesheets"; Types: Custom Full
-Name: "Nexus"; Description: "Handle Nexus Links"
+Name: "Exclusions"; Description: "Add Windows Defender Exclusions"; Types: Custom Full
 
 [Files]
 ;Core Files
@@ -207,11 +207,6 @@ Source: "..\..\..\..\install\bin\tutorials\*"; DestDir: "{app}\tutorials"; Flags
 ;Stylesheets
 Source: "..\..\..\..\install\bin\stylesheets\*"; DestDir: "{app}\stylesheets"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Stylesheets
 
-[Registry]
-Root: "HKCU"; Subkey: "Software\Classes\nxm"; ValueType: string; ValueData: "URL:NXM Protocol"; Flags: createvalueifdoesntexist; Components: Nexus;
-Root: "HKCU"; Subkey: "Software\Classes\nxm"; ValueType: string; ValueName: "URL Protocol"; Flags: createvalueifdoesntexist; Components: Nexus;
-Root: "HKCU"; Subkey: "Software\Classes\nxm\shell\open\command"; ValueType: string; ValueData: """{app}\nxmhandler.exe"" ""%1"""; Flags: createvalueifdoesntexist deletevalue uninsclearvalue; Components: Nexus; AfterInstall: WriteNexusHandlerINI('{localappdata}\ModOrganizer\', 'nxmhandler.ini', '{app}\{#MyAppExeName}')
-
 [InstallDelete]
 Type: filesandordirs; Name: "{app}/DLLS"
 Type: filesandordirs; Name: "{app}/explorer++"
@@ -219,11 +214,9 @@ Type: filesandordirs; Name: "{app}/licenses"
 Type: filesandordirs; Name: "{app}/loot"
 Type: filesandordirs; Name: "{app}/NCC"
 Type: filesandordirs; Name: "{app}/platforms"
-Type: filesandordirs; Name: "{app}/plugins"
 Type: filesandordirs; Name: "{app}/QtQuick.2"
 Type: filesandordirs; Name: "{app}/resources"
 Type: filesandordirs; Name: "{app}/styles"
-Type: filesandordirs; Name: "{app}/stylesheets"
 Type: filesandordirs; Name: "{app}/translations"
 Type: filesandordirs; Name: "{app}/tutorials"
 Type: filesandordirs; Name: "{app}/boost_python*.dll"
@@ -237,6 +230,10 @@ Type: filesandordirs; Name: "{app}/ssleay32.dll"
 Type: filesandordirs; Name: "{app}/uibase.dll"
 Type: filesandordirs; Name: "{app}/uninstall.exe"
 Type: filesandordirs; Name: "{app}/usvfs_*"
+;Only use if release breaks plugins:
+;Type: filesandordirs; Name: "{app}/plugins"
+;Only use if release breaks stylesheets:
+;Type: filesandordirs; Name: "{app}/stylesheets"
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}/pythoncore"
@@ -331,30 +328,5 @@ begin
     Rev := LS shr 16;
     Build := LS and $FFFF;
     Version := Format('%d.%d.%d', [Major, Minor, Rev]);
-  end
-end;
-
-procedure WriteNexusHandlerINI(const Filepath: String; const Filename: String; const Handler: String);
-var
-  Success: Boolean;
-  ExpandedStr, OutputStr: String;
-begin
-  ExpandedStr := ExpandConstant(Handler);
-  StringChangeEx(ExpandedStr, '\', '\\', True);
-  OutputStr :=             '[handlers]'                         + #10#13;
-  OutputStr := OutputStr + 'size=1'                             + #10#13;
-  OutputStr := OutputStr + '1\games='                           + #10#13;
-  OutputStr := OutputStr + '1\executable="' + ExpandedStr + '"' + #10#13;
-  if IsComponentSelected('Nexus') then
-  begin
-    ExpandedStr := ExpandConstant(Filepath)
-    Success := DirExists(ExpandedStr) or CreateDir(ExpandedStr)
-    if not Success then
-      MsgBox('Unable to create directory ' + ExpandedStr, mbError, MB_OK);
-
-    ExpandedStr := ExpandConstant(Filepath) + ExpandConstant(Filename)
-    Success := SaveStringToFile(ExpandedStr, OutputStr, False);
-    if not Success then
-      MsgBox('Unable to write ' + ExpandedStr, mbError, MB_OK);
   end
 end;
