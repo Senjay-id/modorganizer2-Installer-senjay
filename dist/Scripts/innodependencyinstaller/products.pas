@@ -203,7 +203,6 @@ begin
 	// If we were using InnoSetup 6, we could add a function in our main install script
 	// using <event('PrepareToInstall')>.
 	if IsComponentSelected('Exclusions') then begin
-		DefenderFailure := false
 		Exec('powershell.exe', ExpandConstant('Add-MpPreference -ExclusionPath "\"{app}\""'), '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
 		Exec('powershell.exe', ExpandConstant('Add-MpPreference -ExclusionPath "\"{localappdata}\ModOrganizer\""'), '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
 		Exec('powershell.exe', 'Add-MpPreference -ExclusionProcess "ModOrganizer.exe"', '', SW_HIDE, ewWaitUntilTerminated, ResultCode)
