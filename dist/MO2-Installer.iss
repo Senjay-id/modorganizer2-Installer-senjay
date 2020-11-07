@@ -107,9 +107,9 @@ Source: "..\..\..\..\install\bin\dlls\QtQuick.2\*"; DestDir: "{app}\dlls\QtQuick
 Source: "..\..\..\..\install\bin\dlls\platforms\*"; DestDir: "{app}\dlls\platforms"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\dlls\7z.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\archive.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\dlls\libcrypto-1_1-x64.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\libcrypto-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\liblz4.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\dlls\libssl-1_1-x64.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\libssl-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\resources\*"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\dlls\styles\*"; DestDir: "{app}\dlls\styles"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 ;QT DLLS
@@ -220,11 +220,14 @@ Type: filesandordirs; Name: "{app}/tutorials"
 Type: filesandordirs; Name: "{app}/boost_python*.dll"
 Type: filesandordirs; Name: "{app}/helper.exe"
 Type: filesandordirs; Name: "{app}/libeay32.dll"
+Type: filesandordirs; Name: "{app}/libcrypto-*"
 Type: filesandordirs; Name: "{app}/ModOrganizer.exe"
 Type: filesandordirs; Name: "{app}/nxmhandler.exe"
 Type: filesandordirs; Name: "{app}/python*"
 Type: filesandordirs; Name: "{app}/QTWebEngineProcess.exe"
 Type: filesandordirs; Name: "{app}/ssleay32.dll"
+Type: filesandordirs; Name: "{app}/libssl-*"
+Type: filesandordirs; Name: "{app}/libffi-*"
 Type: filesandordirs; Name: "{app}/uibase.dll"
 Type: filesandordirs; Name: "{app}/uninstall.exe"
 Type: filesandordirs; Name: "{app}/usvfs_*"
