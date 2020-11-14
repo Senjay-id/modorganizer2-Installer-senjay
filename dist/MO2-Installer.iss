@@ -109,9 +109,9 @@ Source: "..\..\..\..\install\bin\libcrypto-1_1-x64.dll"; DestDir: "{app}"; Flags
 Source: "..\..\..\..\install\bin\dlls\liblz4.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\libssl-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\boost_python38-vc142-mt-x64-1_74.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\resources\icudtl.dat"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
-Source: "..\..\..\..\install\bin\resources\markdown.html"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
-Source: "..\..\..\..\install\bin\resources\qtwebengine_*"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\resources\icudtl.dat"; DestDir: "{app}\resources"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\resources\markdown.html"; DestDir: "{app}\resources"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\resources\qtwebengine_*"; DestDir: "{app}\resources"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\resources\QtWebEngineProcess.exe"; DestDir: "{app}\resources"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\styles\*"; DestDir: "{app}\dlls\styles"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 ;QT DLLS
