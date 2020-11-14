@@ -85,12 +85,10 @@ Name: "Exclusions"; Description: "Add Windows Defender Exclusions"; Types: Custo
 
 [Files]
 ;Core Files
-Source: "..\..\..\..\install\bin\dlls\boost_python38-vc142-mt-x64-1_74.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dump_running_process.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\helper.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\ModOrganizer.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\nxmhandler.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\dlls\QtWebEngineProcess.exe"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\uibase.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\usvfs_proxy_x64.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\usvfs_proxy_x86.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
@@ -110,7 +108,11 @@ Source: "..\..\..\..\install\bin\dlls\archive.dll"; DestDir: "{app}\dlls"; Flags
 Source: "..\..\..\..\install\bin\libcrypto-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\liblz4.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\libssl-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\resources\*"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\dlls\boost_python38-vc142-mt-x64-1_74.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\resources\icudtl.dat"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\resources\markdown.html"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\resources\qtwebengine_*"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\resources\QtWebEngineProcess.exe"; DestDir: "{app}\resources"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\styles\*"; DestDir: "{app}\dlls\styles"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 ;QT DLLS
 Source: "..\..\..\..\install\bin\dlls\imageformats\*"; DestDir: "{app}\dlls\imageformats"; Flags: ignoreversion createallsubdirs recursesubdirs
