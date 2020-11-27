@@ -85,7 +85,7 @@ Name: "Exclusions"; Description: "Add Windows Defender Exclusions"; Types: Custo
 
 [Files]
 ;Core Files
-Source: "..\..\..\..\install\bin\boost_python38-vc142-mt-x64-1_73.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\boost_python38-vc142-mt-x64-1_74.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dump_running_process.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\helper.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\libcrypto-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
@@ -222,11 +222,14 @@ Type: filesandordirs; Name: "{app}/tutorials"
 Type: filesandordirs; Name: "{app}/boost_python*.dll"
 Type: filesandordirs; Name: "{app}/helper.exe"
 Type: filesandordirs; Name: "{app}/libeay32.dll"
+Type: filesandordirs; Name: "{app}/libcrypto-*"
 Type: filesandordirs; Name: "{app}/ModOrganizer.exe"
 Type: filesandordirs; Name: "{app}/nxmhandler.exe"
 Type: filesandordirs; Name: "{app}/python*"
 Type: filesandordirs; Name: "{app}/QTWebEngineProcess.exe"
 Type: filesandordirs; Name: "{app}/ssleay32.dll"
+Type: filesandordirs; Name: "{app}/libssl-*"
+Type: filesandordirs; Name: "{app}/libffi-*"
 Type: filesandordirs; Name: "{app}/uibase.dll"
 Type: filesandordirs; Name: "{app}/uninstall.exe"
 Type: filesandordirs; Name: "{app}/usvfs_*"
