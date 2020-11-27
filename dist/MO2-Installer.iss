@@ -85,10 +85,14 @@ Name: "Exclusions"; Description: "Add Windows Defender Exclusions"; Types: Custo
 
 [Files]
 ;Core Files
+Source: "..\..\..\..\install\bin\boost_python38-vc142-mt-x64-1_73.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dump_running_process.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\helper.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\libcrypto-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\libssl-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\ModOrganizer.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\nxmhandler.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\QtWebEngineProcess.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\uibase.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\usvfs_proxy_x64.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\usvfs_proxy_x86.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
@@ -101,19 +105,15 @@ Source: "..\..\..\..\install\bin\plugins\diagnose_basic.dll"; DestDir: "{app}\pl
 Source: "..\..\..\..\install\bin\plugins\inibakery.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\plugins\installer_bundle.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\licenses\*"; DestDir: "{app}\licenses"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
-Source: "..\..\..\..\install\bin\dlls\QtQuick.2\*"; DestDir: "{app}\dlls\QtQuick.2"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
-Source: "..\..\..\..\install\bin\dlls\platforms\*"; DestDir: "{app}\dlls\platforms"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\QtQuick.2\*"; DestDir: "{app}\QtQuick.2"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\platforms\*"; DestDir: "{app}\platforms"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\dlls\7z.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\archive.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\libcrypto-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\dlls\libcrypto-1_1-x64.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\liblz4.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\libssl-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\dlls\boost_python38-vc142-mt-x64-1_74.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\resources\icudtl.dat"; DestDir: "{app}\resources"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\resources\markdown.html"; DestDir: "{app}\resources"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\resources\qtwebengine_*"; DestDir: "{app}\resources"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\resources\QtWebEngineProcess.exe"; DestDir: "{app}\resources"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\dlls\styles\*"; DestDir: "{app}\dlls\styles"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\dlls\libssl-1_1-x64.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\resources\*"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\styles\*"; DestDir: "{app}\styles"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 ;QT DLLS
 Source: "..\..\..\..\install\bin\dlls\imageformats\*"; DestDir: "{app}\dlls\imageformats"; Flags: ignoreversion createallsubdirs recursesubdirs
 Source: "..\..\..\..\install\bin\dlls\Qt5Core.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
@@ -157,10 +157,10 @@ Source: "..\..\..\..\install\bin\plugins\installer_fomod_csharp.dll"; DestDir: "
 Source: "..\..\..\..\install\bin\NCC\*"; DestDir: "{app}\NCC"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\NCC
 Source: "..\..\..\..\install\bin\plugins\installer_ncc.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\NCC
 ;Python Support
-Source: "..\..\..\..\install\bin\dlls\python38.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: Plugins\Python
-Source: "..\..\..\..\install\bin\dlls\libffi-7.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: Plugins\Python
-Source: "..\..\..\..\install\bin\dlls\pythoncore.zip"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: Plugins\Python
-Source: "..\..\..\..\install\bin\dlls\pythoncore\*"; DestDir: "{app}\dlls\pythoncore"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\Python
+Source: "..\..\..\..\install\bin\python38.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
+Source: "..\..\..\..\install\bin\libffi-7.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
+Source: "..\..\..\..\install\bin\pythoncore.zip"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
+Source: "..\..\..\..\install\bin\pythoncore\*"; DestDir: "{app}\pythoncore"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\Python
 Source: "..\..\..\..\install\bin\plugins\plugin_python.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\Python
 Source: "..\..\..\..\install\bin\plugins\data\*"; DestDir: "{app}\plugins\data"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\Python
 ;Legacy ini editor
@@ -201,9 +201,9 @@ Source: "..\..\..\..\install\bin\dlls\libbsarch.dll"; DestDir: "{app}\dlls"; Fla
 Source: "..\..\..\..\install\bin\plugins\bsa_packer.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\BSAPacker
 ;End Plugin Groups
 ;Translations
-Source: "..\..\..\..\install\bin\resources\translations\*"; DestDir: "{app}\resources\translations"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Translations
+Source: "..\..\..\..\install\bin\translations\*"; DestDir: "{app}\translations"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Translations
 ;Tutorials
-Source: "..\..\..\..\install\bin\resources\tutorials\*"; DestDir: "{app}\resources\tutorials"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Tutorials
+Source: "..\..\..\..\install\bin\tutorials\*"; DestDir: "{app}\tutorials"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Tutorials
 ;Stylesheets
 Source: "..\..\..\..\install\bin\stylesheets\*"; DestDir: "{app}\stylesheets"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Stylesheets
 
@@ -222,14 +222,11 @@ Type: filesandordirs; Name: "{app}/tutorials"
 Type: filesandordirs; Name: "{app}/boost_python*.dll"
 Type: filesandordirs; Name: "{app}/helper.exe"
 Type: filesandordirs; Name: "{app}/libeay32.dll"
-Type: filesandordirs; Name: "{app}/libcrypto-*"
 Type: filesandordirs; Name: "{app}/ModOrganizer.exe"
 Type: filesandordirs; Name: "{app}/nxmhandler.exe"
 Type: filesandordirs; Name: "{app}/python*"
 Type: filesandordirs; Name: "{app}/QTWebEngineProcess.exe"
 Type: filesandordirs; Name: "{app}/ssleay32.dll"
-Type: filesandordirs; Name: "{app}/libssl-*"
-Type: filesandordirs; Name: "{app}/libffi-*"
 Type: filesandordirs; Name: "{app}/uibase.dll"
 Type: filesandordirs; Name: "{app}/uninstall.exe"
 Type: filesandordirs; Name: "{app}/usvfs_*"
