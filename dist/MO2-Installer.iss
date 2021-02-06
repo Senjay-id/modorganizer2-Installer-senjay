@@ -64,8 +64,9 @@ Name: "Plugins"; Description: "MO2 Plugins"; Types: Full Custom
 Name: "Plugins\GameSupport";  Description: "Game Support"; Types: Custom Full; Flags: fixed
 Name: "Plugins\Manual"; Description: "Manual Installer"; Types: Custom Full
 Name: "Plugins\Quick"; Description: "Quick Installer"; Types: Custom Full
-Name: "Plugins\Bain"; Description: "BAIN Installer"; Types: Custom Full
-Name: "Plugins\FOMOD"; Description: "FOMOD Installer"; Types: Custom Full
+Name: "Plugins\Bain"; Description: "BAIN Installers"; Types: Custom Full
+Name: "Plugins\FOMOD"; Description: "FOMOD Installers"; Types: Custom Full
+Name: "Plugins\OMOD"; Description: "OMOD Installer"; Types: Custom Full
 Name: "Plugins\NCC"; Description: "NCC Installer"; Types: Custom Full
 Name: "Plugins\LegacyINI"; Description: "Legacy INI editor"; Types: Custom Full
 Name: "Plugins\FNISCheck"; Description: "FNIS Checker"; Types: Custom Full
@@ -85,7 +86,7 @@ Name: "Exclusions"; Description: "Add Windows Defender Exclusions"; Types: Custo
 
 [Files]
 ;Core Files
-Source: "..\..\..\..\install\bin\boost_python38-vc142-mt-x64-1_74.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\boost_python38-vc142-mt-x64-1_75.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dump_running_process.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\helper.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\libcrypto-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
@@ -149,10 +150,13 @@ Source: "..\..\..\..\install\bin\plugins\installer_manual.dll"; DestDir: "{app}\
 Source: "..\..\..\..\install\bin\plugins\installer_quick.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\Quick
 ;BAIN Installer
 Source: "..\..\..\..\install\bin\plugins\installer_bain.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\Bain
+Source: "..\..\..\..\install\bin\plugins\installer_wizard\*"; DestDir: "{app}\plugins\installer_wizard"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\Bain
 ;FOMOD Installer
 Source: "..\..\..\..\install\bin\plugins\installer_fomod.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\FOMOD
 ;FOMOD C# Installer
 Source: "..\..\..\..\install\bin\plugins\installer_fomod_csharp.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\FOMOD
+;OMOD Installer
+Source: "..\..\..\..\install\bin\plugins\installer_omod.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\OMOD
 ;NCC Installer
 Source: "..\..\..\..\install\bin\NCC\*"; DestDir: "{app}\NCC"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\NCC
 Source: "..\..\..\..\install\bin\plugins\installer_ncc.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\NCC
@@ -185,6 +189,7 @@ Source: "..\..\..\..\install\bin\plugins\game_skyrim.dll"; DestDir: "{app}\plugi
 Source: "..\..\..\..\install\bin\plugins\game_skyrimvr.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_skyrimse.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_enderal.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\basic_games\*"; DestDir: "{app}\plugins\basic_games"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\GameSupport
 ;FNIS Patches
 Source: "..\..\..\..\install\bin\plugins\FNISPatches.py"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\FNISPatches
 ;FNIS Tool
