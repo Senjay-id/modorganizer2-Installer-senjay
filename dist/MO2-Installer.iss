@@ -189,6 +189,7 @@ Source: "..\..\..\..\install\bin\plugins\game_skyrim.dll"; DestDir: "{app}\plugi
 Source: "..\..\..\..\install\bin\plugins\game_skyrimvr.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_skyrimse.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_enderal.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_enderalse.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\basic_games\*"; DestDir: "{app}\plugins\basic_games"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\GameSupport
 ;FNIS Patches
 Source: "..\..\..\..\install\bin\plugins\FNISPatches.py"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\FNISPatches
