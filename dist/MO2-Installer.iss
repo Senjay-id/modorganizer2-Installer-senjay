@@ -239,9 +239,10 @@ Type: filesandordirs; Name: "{app}/libffi-*"
 Type: filesandordirs; Name: "{app}/uibase.dll"
 Type: filesandordirs; Name: "{app}/uninstall.exe"
 Type: filesandordirs; Name: "{app}/usvfs_*"
+
+Type: filesandordirs; Name: "{app}/plugins/installer_wizard"
 ;Only use if release breaks plugins:
 ;Type: filesandordirs; Name: "{app}/plugins"
-Type: filesandordirs; Name: "{app}/plugins/installer_wizard/lib"
 ;Only use if release breaks stylesheets:
 ;Type: filesandordirs; Name: "{app}/stylesheets"
 
