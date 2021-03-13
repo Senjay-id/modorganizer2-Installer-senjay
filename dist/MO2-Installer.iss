@@ -71,12 +71,12 @@ Name: "Plugins\OMOD"; Description: "OMOD Installer"; Types: Custom Full
 Name: "Plugins\NCC"; Description: "NCC Installer"; Types: Custom Full
 Name: "Plugins\LegacyINI"; Description: "Legacy INI editor"; Types: Custom Full
 Name: "Plugins\FNISCheck"; Description: "FNIS Checker"; Types: Custom Full
-Name: "Plugins\FNISPatches"; Description: "FNIS Patches (requires Python)"; Types: Custom Full
-Name: "Plugins\FNISTool"; Description: "FNIS Tool (requires Python)"; Types: Custom Full
-Name: "Plugins\Configurator"; Description: "Configurator (requires Python)"; Types: Custom Full
-Name: "Plugins\SEPluginChecker"; Description: "Script Extender Plugin Checker (requires Python)"; Types: Custom Full
-Name: "Plugins\DDSPreview"; Description: "DDS Preview (requires Python)"; Types: Custom Full
-Name: "Plugins\Form43Checker"; Description: "Form 43 Checker (requires Python)"; Types: Custom Full
+Name: "Plugins\FNISPatches"; Description: "FNIS Patches"; Types: Custom Full
+Name: "Plugins\FNISTool"; Description: "FNIS Tool"; Types: Custom Full
+Name: "Plugins\Configurator"; Description: "Configurator"; Types: Custom Full
+Name: "Plugins\SEPluginChecker"; Description: "Script Extender Plugin Checker"; Types: Custom Full
+Name: "Plugins\DDSPreview"; Description: "DDS Preview"; Types: Custom Full
+Name: "Plugins\Form43Checker"; Description: "Form 43 Checker"; Types: Custom Full
 Name: "Plugins\File"; Description: "File Preview"; Types: Custom Full
 Name: "Plugins\BSAPacker"; Description: "BSA/BA2 Packer"; Types: Custom Full
 Name: "Translations"; Description: "Translations"; Types: Custom Full
