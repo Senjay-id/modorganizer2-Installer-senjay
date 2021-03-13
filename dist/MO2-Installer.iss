@@ -241,6 +241,7 @@ Type: filesandordirs; Name: "{app}/uninstall.exe"
 Type: filesandordirs; Name: "{app}/usvfs_*"
 ;Only use if release breaks plugins:
 ;Type: filesandordirs; Name: "{app}/plugins"
+Type: filesandordirs; Name: "{app}/plugins/installer_wizard/lib"
 ;Only use if release breaks stylesheets:
 ;Type: filesandordirs; Name: "{app}/stylesheets"
 
