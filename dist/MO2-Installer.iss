@@ -62,6 +62,7 @@ Name: "QTDLL"; Description: "Qt DLL's"; Types: Full Custom; Flags: fixed
 Name: "FileExplorer"; Description: "Explorer++"; Types: Full Custom;
 Name: "Plugins"; Description: "MO2 Plugins"; Types: Full Custom
 Name: "Plugins\GameSupport";  Description: "Game Support"; Types: Custom Full; Flags: fixed
+Name: "Plugins\Python"; Description: "Python Support"; Types: Custom Full; Flags: fixed
 Name: "Plugins\Manual"; Description: "Manual Installer"; Types: Custom Full
 Name: "Plugins\Quick"; Description: "Quick Installer"; Types: Custom Full
 Name: "Plugins\Bain"; Description: "BAIN Installers"; Types: Custom Full
@@ -70,7 +71,6 @@ Name: "Plugins\OMOD"; Description: "OMOD Installer"; Types: Custom Full
 Name: "Plugins\NCC"; Description: "NCC Installer"; Types: Custom Full
 Name: "Plugins\LegacyINI"; Description: "Legacy INI editor"; Types: Custom Full
 Name: "Plugins\FNISCheck"; Description: "FNIS Checker"; Types: Custom Full
-Name: "Plugins\Python"; Description: "Python Support"; Types: Custom Full
 Name: "Plugins\FNISPatches"; Description: "FNIS Patches (requires Python)"; Types: Custom Full
 Name: "Plugins\FNISTool"; Description: "FNIS Tool (requires Python)"; Types: Custom Full
 Name: "Plugins\Configurator"; Description: "Configurator (requires Python)"; Types: Custom Full
@@ -189,6 +189,7 @@ Source: "..\..\..\..\install\bin\plugins\game_skyrim.dll"; DestDir: "{app}\plugi
 Source: "..\..\..\..\install\bin\plugins\game_skyrimvr.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_skyrimse.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_enderal.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_enderalse.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\basic_games\*"; DestDir: "{app}\plugins\basic_games"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\GameSupport
 ;FNIS Patches
 Source: "..\..\..\..\install\bin\plugins\FNISPatches.py"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\FNISPatches
