@@ -106,6 +106,7 @@ Source: "..\..\..\..\install\bin\plugins\diagnose_basic.dll"; DestDir: "{app}\pl
 Source: "..\..\..\..\install\bin\plugins\inibakery.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\plugins\installer_bundle.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\licenses\*"; DestDir: "{app}\licenses"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\QtQml\*"; DestDir: "{app}\QtQml"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\QtQuick.2\*"; DestDir: "{app}\QtQuick.2"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\platforms\*"; DestDir: "{app}\platforms"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\dlls\7z.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
@@ -126,6 +127,7 @@ Source: "..\..\..\..\install\bin\dlls\Qt5PrintSupport.dll"; DestDir: "{app}\dlls
 Source: "..\..\..\..\install\bin\dlls\Qt5Qml.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\Qt5Quick.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\Qt5QuickWidgets.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
+Source: "..\..\..\..\install\bin\dlls\Qt5RemoteObjects.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\Qt5SerialPort.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\Qt5Svg.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\Qt5WebChannel.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
