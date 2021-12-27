@@ -249,6 +249,11 @@ Type: filesandordirs; Name: "{app}/plugins/installer_wizard"
 ;Only use if release breaks stylesheets:
 ;Type: filesandordirs; Name: "{app}/stylesheets"
 
+;This was added in 2.4.3 and quarantined in 2.4.4.
+;The applicable users shouldn't be using the installer anyways
+;so yeet it.
+Type: filesandordirs; Name: "{app}/plugins/basic_games/games/game_masseffectlegendary.py"
+
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}/pythoncore"
 Type: filesandordirs; Name: "{app}/plugins"
