@@ -184,7 +184,7 @@ Source: "..\..\..\..\install\bin\plugins\Form43Checker.py"; DestDir: "{app}\plug
 Source: "..\..\..\..\install\bin\dlls\libbsarch.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: Plugins\BSAPacker
 Source: "..\..\..\..\install\bin\plugins\bsa_packer.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\BSAPacker
 ;Plugins Data
-Source: "..\..\..\..\install\bin\plugins\data"; DestDir: "{app}\plugins\data"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins
+Source: "..\..\..\..\install\bin\plugins\data\*"; DestDir: "{app}\plugins\data"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins
 ;End Plugin Groups
 ;Translations
 Source: "..\..\..\..\install\bin\translations\*"; DestDir: "{app}\translations"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Translations
@@ -228,6 +228,8 @@ Type: filesandordirs; Name: "{app}/plugins/installer_wizard"
 
 ;In 2.5, Python plugin is now a module so need to remove the DLL
 Type: filesandordirs; Name: "{app}/plugins/plugin_python.dll"
+Type: filesandordirs; Name: "{app}/plugins/data/pythonrunner.dll"
+Type: filesandordirs; Name: "{app}/plugins/data/PyQt*"
 
 ;This was added in 2.4.3 and quarantined in 2.4.4.
 ;The applicable users shouldn't be using the installer anyways
