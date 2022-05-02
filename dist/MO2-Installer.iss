@@ -138,7 +138,7 @@ Source: "..\..\..\..\install\bin\plugins\installer_fomod.dll"; DestDir: "{app}\p
 ;FOMOD C# Installer
 Source: "..\..\..\..\install\bin\plugins\installer_fomod_csharp.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\FOMOD
 ;OMOD Installer
-Source: "..\..\..\..\install\bin\plugins\installer_omod.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\OMOD
+Source: "..\..\..\..\install\bin\plugins\installer_omod\*"; DestDir: "{app}\plugins\installer_omod"; Flags: ignoreversion; Components: Plugins\OMOD
 ;NCC Installer
 ; Source: "..\..\..\..\install\bin\NCC\*"; DestDir: "{app}\NCC"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\NCC
 ; Source: "..\..\..\..\install\bin\plugins\installer_ncc.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\NCC
@@ -200,6 +200,7 @@ Type: filesandordirs; Name: "{app}/licenses"
 Type: filesandordirs; Name: "{app}/loot"
 Type: filesandordirs; Name: "{app}/NCC"
 Type: filesandordirs; Name: "{app}/platforms"
+Type: filesandordirs; Name: "{app}/QtQuick"
 Type: filesandordirs; Name: "{app}/QtQuick.2"
 Type: filesandordirs; Name: "{app}/resources"
 Type: filesandordirs; Name: "{app}/styles"
@@ -220,16 +221,27 @@ Type: filesandordirs; Name: "{app}/uibase.dll"
 Type: filesandordirs; Name: "{app}/uninstall.exe"
 Type: filesandordirs; Name: "{app}/usvfs_*"
 
-Type: filesandordirs; Name: "{app}/plugins/installer_wizard"
 ;Only use if release breaks plugins:
 ;Type: filesandordirs; Name: "{app}/plugins"
 ;Only use if release breaks stylesheets:
 ;Type: filesandordirs; Name: "{app}/stylesheets"
 
-;In 2.5, Python plugin is now a module so need to remove the DLL
+;In 2.5, Python plugin is a module so need to remove the DLL
+Type: filesandordirs; Name: "{app}/plugins/plugin_python"
 Type: filesandordirs; Name: "{app}/plugins/plugin_python.dll"
 Type: filesandordirs; Name: "{app}/plugins/data/pythonrunner.dll"
 Type: filesandordirs; Name: "{app}/plugins/data/PyQt*"
+
+;In 2.5, installer OMOD is a module
+Type: filesandordirs; Name: "{app}/plugins/installer_omod"
+Type: filesandordirs; Name: "{app}/plugins/installer_omod.dll"
+Type: filesandordirs; Name: "{app}/plugins/data/OMOD*.dll"
+Type: filesandordirs; Name: "{app}/plugins/data/ICSharpCode.SharpZipLib.dll"
+Type: filesandordirs; Name: "{app}/plugins/data/RtfPipe.dll"
+Type: filesandordirs; Name: "{app}/plugins/data/System.Drawing.Common.dll"
+
+
+Type: filesandordirs; Name: "{app}/plugins/installer_wizard"
 
 ;This was added in 2.4.3 and quarantined in 2.4.4.
 ;The applicable users shouldn't be using the installer anyways
