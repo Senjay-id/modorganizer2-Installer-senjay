@@ -60,7 +60,7 @@ Name: "Custom"; Description: "Expert Install"; Flags: iscustom
 Name: "core"; Description: "Core Application"; Types: Custom Full; Flags: fixed
 Name: "QTDLL"; Description: "Qt DLL's"; Types: Full Custom; Flags: fixed
 Name: "FileExplorer"; Description: "Explorer++"; Types: Full Custom;
-Name: "Plugins"; Description: "MO2 Plugins"; Types: Full Custom
+Name: "Plugins"; Description: "MO2 Plugins"; Types: Full Custom; Flags: fixed
 Name: "Plugins\GameSupport";  Description: "Game Support"; Types: Custom Full; Flags: fixed
 Name: "Plugins\Python"; Description: "Python Support"; Types: Custom Full; Flags: fixed
 Name: "Plugins\Manual"; Description: "Manual Installer"; Types: Custom Full
@@ -86,7 +86,6 @@ Name: "Exclusions"; Description: "Add Windows Defender Exclusions"; Types: Custo
 
 [Files]
 ;Core Files
-Source: "..\..\..\..\install\bin\boost_python38-vc142-mt-x64-1_75.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dump_running_process.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\helper.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\libcrypto-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
@@ -107,7 +106,7 @@ Source: "..\..\..\..\install\bin\plugins\inibakery.dll"; DestDir: "{app}\plugins
 Source: "..\..\..\..\install\bin\plugins\installer_bundle.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\licenses\*"; DestDir: "{app}\licenses"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\QtQml\*"; DestDir: "{app}\QtQml"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
-Source: "..\..\..\..\install\bin\QtQuick.2\*"; DestDir: "{app}\QtQuick.2"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\QtQuick\*"; DestDir: "{app}\QtQuick"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\platforms\*"; DestDir: "{app}\platforms"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\dlls\7z.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\archive.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
@@ -117,31 +116,12 @@ Source: "..\..\..\..\install\bin\dlls\libssl-1_1-x64.dll"; DestDir: "{app}\dlls"
 Source: "..\..\..\..\install\bin\resources\*"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\styles\*"; DestDir: "{app}\styles"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 ;QT DLLS
-Source: "..\..\..\..\install\bin\dlls\imageformats\*"; DestDir: "{app}\dlls\imageformats"; Flags: ignoreversion createallsubdirs recursesubdirs
-Source: "..\..\..\..\install\bin\dlls\Qt5Core.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\QT5Concurrent.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5Gui.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5Network.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5Positioning.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5PrintSupport.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5Qml.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5Quick.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5QuickWidgets.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5RemoteObjects.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5SerialPort.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5Svg.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5WebChannel.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5WebEngineCore.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5WebEngineWidgets.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5WebSockets.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5Widgets.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5WinExtras.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5QmlModels.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\Qt5QmlWorkerScript.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
+Source: "..\..\..\..\install\bin\dlls\imageformats\*"; DestDir: "{app}\dlls\imageformats"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: QTDLL
+Source: "..\..\..\..\install\bin\dlls\tls\*"; DestDir: "{app}\dlls\tls"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: QTDLL
+Source: "..\..\..\..\install\bin\dlls\Qt*.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\d3dcompiler_47.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\dlls.manifest"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\libEGL.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\libGLESV2.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
+Source: "..\..\..\..\install\bin\dlls\opengl32sw.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\opengl32sw.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 ;Explorer++
 Source: "..\..\..\..\install\bin\explorer++\*"; DestDir: "{app}\explorer++"; Flags: ignoreversion; Components: FileExplorer
@@ -160,15 +140,10 @@ Source: "..\..\..\..\install\bin\plugins\installer_fomod_csharp.dll"; DestDir: "
 ;OMOD Installer
 Source: "..\..\..\..\install\bin\plugins\installer_omod.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\OMOD
 ;NCC Installer
-Source: "..\..\..\..\install\bin\NCC\*"; DestDir: "{app}\NCC"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\NCC
-Source: "..\..\..\..\install\bin\plugins\installer_ncc.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\NCC
+; Source: "..\..\..\..\install\bin\NCC\*"; DestDir: "{app}\NCC"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\NCC
+; Source: "..\..\..\..\install\bin\plugins\installer_ncc.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\NCC
 ;Python Support
-Source: "..\..\..\..\install\bin\python38.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
-Source: "..\..\..\..\install\bin\libffi-7.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
-Source: "..\..\..\..\install\bin\pythoncore.zip"; DestDir: "{app}"; Flags: ignoreversion; Components: Plugins\Python
-Source: "..\..\..\..\install\bin\pythoncore\*"; DestDir: "{app}\pythoncore"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\Python
-Source: "..\..\..\..\install\bin\plugins\plugin_python.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\Python
-Source: "..\..\..\..\install\bin\plugins\data\*"; DestDir: "{app}\plugins\data"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\Python
+Source: "..\..\..\..\install\bin\plugins\plugin_python\*"; DestDir: "{app}\plugins\plugin_python"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\Python
 ;Legacy ini editor
 Source: "..\..\..\..\install\bin\plugins\inieditor.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\LegacyINI
 ;FNIS Checker
@@ -208,6 +183,8 @@ Source: "..\..\..\..\install\bin\plugins\Form43Checker.py"; DestDir: "{app}\plug
 ;BSA/BA2 Packer
 Source: "..\..\..\..\install\bin\dlls\libbsarch.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: Plugins\BSAPacker
 Source: "..\..\..\..\install\bin\plugins\bsa_packer.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\BSAPacker
+;Plugins Data
+Source: "..\..\..\..\install\bin\plugins\data"; DestDir: "{app}\plugins\data"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins
 ;End Plugin Groups
 ;Translations
 Source: "..\..\..\..\install\bin\translations\*"; DestDir: "{app}\translations"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Translations
@@ -248,6 +225,9 @@ Type: filesandordirs; Name: "{app}/plugins/installer_wizard"
 ;Type: filesandordirs; Name: "{app}/plugins"
 ;Only use if release breaks stylesheets:
 ;Type: filesandordirs; Name: "{app}/stylesheets"
+
+;In 2.5, Python plugin is now a module so need to remove the DLL
+Type: filesandordirs; Name: "{app}/plugins/plugin_python.dll"
 
 ;This was added in 2.4.3 and quarantined in 2.4.4.
 ;The applicable users shouldn't be using the installer anyways
