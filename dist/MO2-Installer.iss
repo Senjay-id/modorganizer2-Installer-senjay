@@ -240,6 +240,10 @@ Type: filesandordirs; Name: "{app}/plugins/data/ICSharpCode.SharpZipLib.dll"
 Type: filesandordirs; Name: "{app}/plugins/data/RtfPipe.dll"
 Type: filesandordirs; Name: "{app}/plugins/data/System.Drawing.Common.dll"
 
+;In 2.5, NCC is dead, RIP
+Type: filesandordirs; Name: "{app}/NCC"
+Type: filesandordirs; Name: "{app}/plugins/installer_ncc.dll"
+
 
 Type: filesandordirs; Name: "{app}/plugins/installer_wizard"
 
