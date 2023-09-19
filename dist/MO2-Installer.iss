@@ -88,8 +88,8 @@ Name: "Exclusions"; Description: "Add Windows Defender Exclusions"; Types: Custo
 ;Core Files
 Source: "..\..\..\..\install\bin\dump_running_process.bat"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\helper.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\libcrypto-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\libssl-1_1-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\libcrypto-3-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\libssl-3-x64.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\ModOrganizer.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\nxmhandler.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\QtWebEngineProcess.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: core
@@ -105,14 +105,14 @@ Source: "..\..\..\..\install\bin\plugins\diagnose_basic.dll"; DestDir: "{app}\pl
 Source: "..\..\..\..\install\bin\plugins\inibakery.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\plugins\installer_bundle.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\licenses\*"; DestDir: "{app}\licenses"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
-Source: "..\..\..\..\install\bin\QtQml\*"; DestDir: "{app}\QtQml"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
-Source: "..\..\..\..\install\bin\QtQuick\*"; DestDir: "{app}\QtQuick"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\qml\QtQml\*"; DestDir: "{app}\qml\QtQml"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\qml\QtQuick\*"; DestDir: "{app}\qml\QtQuick"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\platforms\*"; DestDir: "{app}\platforms"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\dlls\7z.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\archive.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\dlls\libcrypto-1_1-x64.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\dlls\libcrypto-3-x64.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\dlls\liblz4.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
-Source: "..\..\..\..\install\bin\dlls\libssl-1_1-x64.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
+Source: "..\..\..\..\install\bin\dlls\libssl-3-x64.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\resources\*"; DestDir: "{app}\resources"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\styles\*"; DestDir: "{app}\styles"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 ;QT DLLS
@@ -166,6 +166,7 @@ Source: "..\..\..\..\install\bin\plugins\game_falloutNV.dll"; DestDir: "{app}\pl
 Source: "..\..\..\..\install\bin\plugins\game_skyrim.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_skyrimvr.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_skyrimse.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_starfield.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_enderal.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_enderalse.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\basic_games\*"; DestDir: "{app}\plugins\basic_games"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\GameSupport
@@ -200,8 +201,10 @@ Type: filesandordirs; Name: "{app}/licenses"
 Type: filesandordirs; Name: "{app}/loot"
 Type: filesandordirs; Name: "{app}/NCC"
 Type: filesandordirs; Name: "{app}/platforms"
+Type: filesandordirs; Name: "{app}/QtQml"
 Type: filesandordirs; Name: "{app}/QtQuick"
 Type: filesandordirs; Name: "{app}/QtQuick.2"
+Type: filesandordirs; Name: "{app}/qml"
 Type: filesandordirs; Name: "{app}/resources"
 Type: filesandordirs; Name: "{app}/styles"
 Type: filesandordirs; Name: "{app}/translations"
