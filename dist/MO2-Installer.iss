@@ -63,7 +63,7 @@ Name: "FileExplorer"; Description: "Explorer++"; Types: Full Custom;
 Name: "Plugins"; Description: "MO2 Plugins"; Types: Full Custom; Flags: fixed
 Name: "Plugins\GameSupport";  Description: "Game Support"; Types: Custom Full; Flags: fixed
 Name: "Plugins\Python"; Description: "Python Support"; Types: Custom Full; Flags: fixed
-Name: "Plugins\Manual"; Description: "Manual Installer"; Types: Custom Full
+Name: "Plugins\Manual"; Description: "Manual Installer"; Types: Custom Full; Flags: fixed
 Name: "Plugins\Quick"; Description: "Quick Installer"; Types: Custom Full
 Name: "Plugins\Bain"; Description: "BAIN Installers"; Types: Custom Full
 Name: "Plugins\FOMOD"; Description: "FOMOD Installers"; Types: Custom Full
