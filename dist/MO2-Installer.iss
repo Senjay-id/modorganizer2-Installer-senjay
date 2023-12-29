@@ -68,7 +68,6 @@ Name: "Plugins\Quick"; Description: "Quick Installer"; Types: Custom Full
 Name: "Plugins\Bain"; Description: "BAIN Installers"; Types: Custom Full
 Name: "Plugins\FOMOD"; Description: "FOMOD Installers"; Types: Custom Full
 Name: "Plugins\OMOD"; Description: "OMOD Installer"; Types: Custom Full
-Name: "Plugins\NCC"; Description: "NCC Installer"; Types: Custom Full
 Name: "Plugins\LegacyINI"; Description: "Legacy INI editor"; Types: Custom Full
 Name: "Plugins\FNISCheck"; Description: "FNIS Checker"; Types: Custom Full
 Name: "Plugins\FNISPatches"; Description: "FNIS Patches"; Types: Custom Full
