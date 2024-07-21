@@ -2,7 +2,9 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #include "MO2-Config.iss"
-#include "Scripts/innodependencyinstaller/innodependencyinstaller.iss"
+
+; requires netcorecheck.exe and netcorecheck_x64.exe (see CodeDependencies.iss)
+#include "Scripts/InnoDependencyInstaller/CodeDependencies.iss"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -348,4 +350,12 @@ begin
     Build := LS and $FFFF;
     Version := Format('%d.%d.%d', [Major, Minor, Rev]);
   end
+end;
+
+function InitializeSetup(): boolean;
+begin
+  Dependency_AddDotNet48;
+  Dependency_AddVC2015To2022;
+
+  Result := True;
 end;
