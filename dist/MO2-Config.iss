@@ -6,5 +6,5 @@
 #define MyAppVersion GetFileVersion(MO2Exe)
 #define MyAppVersionString GetStringFileInfo(MO2Exe, 'FileVersion')
 #define MyAppPublisher "Mod Organizer 2 Team"
-#define MyAppURL "https://github.com/Senjay-id/modorganizer2-senjayr"
+#define MyAppURL "https://github.com/Senjay-id/modorganizer2-senjay"
 #define MyAppExeName "ModOrganizer.exe"
