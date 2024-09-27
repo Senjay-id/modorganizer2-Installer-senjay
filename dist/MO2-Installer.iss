@@ -194,6 +194,8 @@ Source: "..\..\..\..\install\bin\translations\*"; DestDir: "{app}\translations";
 Source: "..\..\..\..\install\bin\tutorials\*"; DestDir: "{app}\tutorials"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Tutorials
 ;Stylesheets
 Source: "..\..\..\..\install\bin\stylesheets\*"; DestDir: "{app}\stylesheets"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Stylesheets
+;Sanity check
+Source: "..\..\..\..\install\bin\plugins\plugin_sanitycheck.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins
 
 [InstallDelete]
 Type: filesandordirs; Name: "{app}/DLLS"
