@@ -106,6 +106,7 @@ Source: "..\..\..\..\install\bin\plugins\diagnose_basic.dll"; DestDir: "{app}\pl
 Source: "..\..\..\..\install\bin\plugins\inibakery.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\plugins\installer_bundle.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: core
 Source: "..\..\..\..\install\bin\licenses\*"; DestDir: "{app}\licenses"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
+Source: "..\..\..\..\install\bin\qml\QML\*"; DestDir: "{app}\qml\QML"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\qml\QtQml\*"; DestDir: "{app}\qml\QtQml"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\qml\QtQuick\*"; DestDir: "{app}\qml\QtQuick"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
 Source: "..\..\..\..\install\bin\platforms\*"; DestDir: "{app}\platforms"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: core
@@ -123,7 +124,10 @@ Source: "..\..\..\..\install\bin\dlls\Qt*.dll"; DestDir: "{app}\dlls"; Flags: ig
 Source: "..\..\..\..\install\bin\dlls\d3dcompiler_47.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\dlls.manifest"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
 Source: "..\..\..\..\install\bin\dlls\opengl32sw.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
-Source: "..\..\..\..\install\bin\dlls\opengl32sw.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
+Source: "..\..\..\..\install\bin\dlls\dxcompiler.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
+Source: "..\..\..\..\install\bin\dlls\dxil.dll"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
+Source: "..\..\..\..\install\bin\dlls\QtWebEngineProcess.exe"; DestDir: "{app}\dlls"; Flags: ignoreversion; Components: QTDLL
+
 ;Explorer++
 Source: "..\..\..\..\install\bin\explorer++\*"; DestDir: "{app}\explorer++"; Flags: ignoreversion; Components: FileExplorer
 ;Start Plugin Groups
@@ -156,20 +160,22 @@ Source: "..\..\..\..\install\bin\plugins\preview_base.dll"; DestDir: "{app}\plug
 ;Preview BSA
 Source: "..\..\..\..\install\bin\plugins\preview_bsa.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\File
 ;Game Support
-Source: "..\..\..\..\install\bin\plugins\game_oblivion.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
-Source: "..\..\..\..\install\bin\plugins\game_nehrim.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
-Source: "..\..\..\..\install\bin\plugins\game_morrowind.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
-Source: "..\..\..\..\install\bin\plugins\game_fallout3.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
-Source: "..\..\..\..\install\bin\plugins\game_ttw.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
-Source: "..\..\..\..\install\bin\plugins\game_fallout4.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
-Source: "..\..\..\..\install\bin\plugins\game_fallout4vr.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
-Source: "..\..\..\..\install\bin\plugins\game_falloutNV.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
-Source: "..\..\..\..\install\bin\plugins\game_skyrim.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
-Source: "..\..\..\..\install\bin\plugins\game_skyrimvr.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
-Source: "..\..\..\..\install\bin\plugins\game_skyrimse.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
-Source: "..\..\..\..\install\bin\plugins\game_starfield.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_enderal.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\game_enderalse.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_fallout3.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_fallout4.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_fallout4vr.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_fallout76.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_falloutNV.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_fo4london.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_morrowind.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_nehrim.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_oblivion.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_skyrim.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_skyrimse.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_skyrimvr.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_starfield.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
+Source: "..\..\..\..\install\bin\plugins\game_ttw.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\GameSupport
 Source: "..\..\..\..\install\bin\plugins\basic_games\*"; DestDir: "{app}\plugins\basic_games"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Plugins\GameSupport
 ;FNIS Patches
 Source: "..\..\..\..\install\bin\plugins\FNISPatches.py"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins\FNISPatches
