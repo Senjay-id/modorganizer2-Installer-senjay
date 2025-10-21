@@ -12,7 +12,7 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{68ADD8CF-0653-48BD-8B14-26E43B93933C}
 AppName={#MyAppName}
-AppVersion={#MyAppVersion}
+AppVersion={#MyAppVersionString}
 VersionInfoVersion={#MyAppVersion}
 ;We should only allow installing on 64bit systems
 ArchitecturesAllowed=x64
@@ -83,6 +83,7 @@ Name: "Plugins\BSAPacker"; Description: "BSA/BA2 Packer"; Types: Custom Full
 Name: "Translations"; Description: "Translations"; Types: Custom Full
 Name: "Tutorials"; Description: "Tutorials"; Types: Custom Full
 Name: "Stylesheets"; Description: "Stylesheets"; Types: Custom Full
+Name: "Modupdater"; Description: "Modupdater"; Types: Custom Full
 Name: "Exclusions"; Description: "Add Windows Defender Exclusions"; Types: Custom Full
 
 [Files]
@@ -193,6 +194,10 @@ Source: "..\..\..\install\bin\translations\*"; DestDir: "{app}\translations"; Fl
 Source: "..\..\..\install\bin\tutorials\*"; DestDir: "{app}\tutorials"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Tutorials
 ;Stylesheets
 Source: "..\..\..\install\bin\stylesheets\*"; DestDir: "{app}\stylesheets"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Stylesheets
+;Sanity check
+Source: "..\..\..\install\bin\plugins\plugin_sanitycheck.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins
+;Mod Upater
+Source: "..\..\..\install\bin\mod_updater\*"; DestDir: "{app}\mod_updater"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Modupdater
 
 [InstallDelete]
 Type: filesandordirs; Name: "{app}/DLLS"
