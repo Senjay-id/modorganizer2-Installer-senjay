@@ -196,7 +196,7 @@ Source: "..\..\..\install\bin\tutorials\*"; DestDir: "{app}\tutorials"; Flags: i
 Source: "..\..\..\install\bin\stylesheets\*"; DestDir: "{app}\stylesheets"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Stylesheets
 ;Sanity check
 Source: "..\..\..\install\bin\plugins\plugin_sanitycheck.dll"; DestDir: "{app}\plugins"; Flags: ignoreversion; Components: Plugins
-;Mod Upater
+;Mod Updater
 Source: "..\..\..\install\bin\mod_updater\*"; DestDir: "{app}\mod_updater"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: Modupdater
 
 [InstallDelete]
